@@ -70,10 +70,10 @@ class ControllerPaymentPaytabs extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('/payment/paytabs', 'token=' . $this->session->data['token'], true)
+			'href' => $this->url->link('extension/payment/paytabs', 'token=' . $this->session->data['token'], true)
 		);
 
-		$data['action'] = $this->url->link('/payment/paytabs', 'token=' . $this->session->data['token'], true);
+		$data['action'] = $this->url->link('extension/payment/paytabs', 'token=' . $this->session->data['token'], true);
 
 		$data['cancel'] = $this->url->link('extension/extension', 'token=' . $this->session->data['token'] . '&type=payment', true);
 
@@ -89,7 +89,7 @@ class ControllerPaymentPaytabs extends Controller {
 			$data['paytabs_password'] = $this->config->get('paytabs_password');
 		}
 
-		$data['callback'] = HTTP_CATALOG . 'index.php?route=/payment/paytabs/callback';
+		$data['callback'] = HTTP_CATALOG . 'index.php?route=/extension/payment/paytabs/callback';
 
 		if (isset($this->request->post['paytabs_total'])) {
 			$data['paytabs_total'] = $this->request->post['paytabs_total'];
@@ -133,11 +133,11 @@ class ControllerPaymentPaytabs extends Controller {
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
 
-		$this->response->setOutput($this->load->view('/payment/paytabs.tpl', $data));
+		$this->response->setOutput($this->load->view('extension/payment/paytabs.tpl', $data));
 	}
 
 	protected function validate() {
-		if (!$this->user->hasPermission('modify', '/payment/paytabs')) {
+		if (!$this->user->hasPermission('modify', 'extension/payment/paytabs')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
