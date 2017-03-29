@@ -1,7 +1,7 @@
 
 
 <?php 
-class ModelPaymentPaytabs extends Model {
+class ModelExtensionPaymentPaytabs extends Model {
 	
 	public function getMethod($address, $total) {
 		$this->language->load('extension/payment/paytabs');
