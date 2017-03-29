@@ -2,7 +2,7 @@
 error_reporting(1);
 ob_start();
 
-class ControllerExtensionPaymentpaytabs extends Controller {
+class ControllerExtensionPaymentPaytabs extends Controller {
 
 
 // class constructor
@@ -38,7 +38,7 @@ public function index() {
 
 		$data['order_id'] = $this->session->data['order_id'];
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/extension/template/payment/paytabs.tpl')) {
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/extension/payment/paytabs.tpl')) {
 			return $this->load->view('/extension/payment/paytabs', $data);
 
 		} else {

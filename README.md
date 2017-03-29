@@ -10,6 +10,6 @@ Configuration
 
 Go to Admin > Extensions > Payments and click install next to the PayTabs module.
 
-Click on the edit link to set up the module configuration.</br>
-For more information refer to the documentation: <a href='https://github.com/PayTabsLLC/OpenCart-2.0.x-Credit-Card/blob/master/PayTabs%20-%20Open%20Cart%20Credit%20Card%20Plugin%20Installation%20Guide%20(V2.0.3.1).pdf'>Documentation.</a>
+Update :-
 
+09/03/2016 - Latest commit has updated the files, folders and folder-file hierarchies to comply and work with OpenCart 2.3.x Standards.

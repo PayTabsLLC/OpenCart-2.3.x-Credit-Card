@@ -1,6 +1,6 @@
 <?php 
 
-class ControllerPaymentPaytabs extends Controller {
+class ControllerExtensionPaymentPaytabs extends Controller {
 	private $error = array();
 
 	public function index() {
@@ -89,7 +89,7 @@ class ControllerPaymentPaytabs extends Controller {
 			$data['paytabs_password'] = $this->config->get('paytabs_password');
 		}
 
-		$data['callback'] = HTTP_CATALOG . 'index.php?route=/extension/payment/paytabs/callback';
+		$data['callback'] = HTTP_CATALOG . 'index.php?route=extension/payment/paytabs/callback';
 
 		if (isset($this->request->post['paytabs_total'])) {
 			$data['paytabs_total'] = $this->request->post['paytabs_total'];
@@ -133,7 +133,7 @@ class ControllerPaymentPaytabs extends Controller {
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
 
-		$this->response->setOutput($this->load->view('extension/payment/paytabs.tpl', $data));
+		$this->response->setOutput($this->load->view('extension/payment/paytabs', $data));
 	}
 
 	protected function validate() {
