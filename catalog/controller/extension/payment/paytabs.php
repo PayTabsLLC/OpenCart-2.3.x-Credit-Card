@@ -2,7 +2,7 @@
 error_reporting(1);
 ob_start();
 
-class ControllerExtensionPaymentpaytabs extends Controller {
+class ControllerExtensionPaymentPaytabs extends Controller {
 
 
 // class constructor
@@ -32,13 +32,13 @@ class ControllerExtensionPaymentpaytabs extends Controller {
 public function index() {
 		$this->load->model('checkout/order');
 
-		$this->load->language('payment/paytabs');
+		$this->load->language('extension/payment/paytabs');
 
     $data['button_confirm'] = $this->language->get('button_confirm');
 
 		$data['order_id'] = $this->session->data['order_id'];
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/payment/paytabs.tpl')) {
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/extension/payment/paytabs.tpl')) {
 			return $this->load->view('/extension/payment/paytabs', $data);
 
 		} else {
@@ -148,7 +148,7 @@ public function index() {
 
 
 	public function send() {
-		$this->language->load('payment/paytabs');
+		$this->language->load('extension/payment/paytabs');
     $this->load->model('checkout/order');
 		         
 
